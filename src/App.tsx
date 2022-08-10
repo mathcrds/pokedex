@@ -29,36 +29,36 @@ export const App = () => {
 
   return (
     <div className="container">
-      <div className="appTitle">
-        <span style={{ color: "rgb(104, 104, 228)" }}>Pok</span>
-        <span>ory</span>
-      </div>
-      <input
-        type="text"
+      <img src="src\assets\pokedex.png" alt="" className="pokedex" />
+      <form className="form">
+        <input
+        type="search"
         onChange={handleChange}
         value={pokemon}
-        placeholder="Digite o nome"
+        placeholder="Insert Pokemon Name"
+        required
       />
+      </form>
       {error && (
-        <span className="pokeError">Digite um nome de pokémon válido</span>
+        <span className="pokeError">Error: invalid pokemon name</span>
       )}
       <button onClick={getPokeData}>Buscar</button>
       {pokeData.id && (
         <div className="pokeWrapper">
           <img
-            src={pokeData.sprites.other.dream_world.front_default}
+            src={pokeData.sprites.versions["generation-v"]["black-white"].animated.front_default}
             alt="Pokemon"
           />
-          <ul>
-            <li>Nº: {pokeData.id}</li>
-            <li>Nome: {capitalizeFirstLetter(pokeData.name)}</li>
-            <li>Tipo:</li>
+            <h1 className="pokeTitleInfo">
+              <p>Number: {pokeData.id}</p>
+              <p>Name: {capitalizeFirstLetter(pokeData.name)} </p>
+              </h1> 
+            {/* <li>Tipo:</li>
             {pokeData.types.map((pokeType) => (
               <li style={{ marginLeft: "2rem" }}>
                 {capitalizeFirstLetter(pokeType.type.name)}
               </li>
-            ))}
-          </ul>
+            ))} */}
         </div>
       )}
     </div>

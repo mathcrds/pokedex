@@ -1,64 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
+}
+
+body {
+    text-align: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #b67756, #6ab7f5);
+}
+
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+        display: inline-block;
+        margin-top: 8%;
+        padding: 20px;
+        position: relative;
 
-.appTitle{
-    font-size: 2rem;
-}
+        span{
+            position: absolute;
+            bottom: 50%;
+            left: 20.8%;
+            transform: translate(141%, 45%);
+            height: 19%;
+            font-weight: 700;
+            color: #42e525;
+            font-size: clamp(6px, 2.22vw, 20px);
+        }
 
-input {
-    width: 30%;
-    font-size: 1rem;
-    border: 1px solid rgb(167, 167, 167);
-    border-radius: 0.5rem;
-    margin-top: 20vh;
-    margin-bottom: 1rem;
-    padding: 1rem;
-
-    &:focus {
-        outline: none !important;
-        border:1px solid rgb(80, 80, 169);
-        box-shadow: 0 0 0.5rem rgb(104, 104, 228);
-      }
-}
-
-button {
-    padding: 1rem 2rem;
-    background: rgb(104, 104, 228);
-    border: none;
-    border-radius: 0.5rem;
-    transition: 0.4s;
-    cursor: pointer;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 700;
-
-    &:hover{
-        filter: brightness(0.9);
+    .pokedex{
+        width: 100%;
+        max-width: 900px;
     }
+
+    .pokeWrapper {
+        img{
+            position: absolute;
+            bottom: 50%;
+            left: 20%;
+            transform: translate(-8%, 25%);
+            height: 18%;
+        }
+    }
+
+    .pokeTitleInfo{
+        position: absolute;
+        font-weight: 700;
+        color: #42e525;
+        bottom: 50%;
+        left: 60%;
+        transform: translate(15%, 18%);
+        height: 17.5%;
+        text-align: left;
+        font-size: clamp(8px, 3vw, 25px);
+    }
+
+    .form {
+        position: absolute;
+        width: 30%;
+        top: 68%;
+        left: 10%;
+
+        input{
+            margin-top: 1rem;
+            width: 110%;
+            padding: 2%;
+            outline: none;
+            border: 2.5px solid #333;
+            font-weight: 400;
+            color: #3a444d;
+            border-radius: 8px;
+            font-size: clamp(8px, 2.4vw, 25px);
+            box-shadow: -3px 4px 0 #888, -5px 7px 0 #333;
+        }
+    }
+
+    button{
+        position: absolute;
+        bottom: 11%;
+        left: 20%;
+        width: 15%;
+        padding: 1.5%;
+
+        border: 2.5px solid #000;
+        border-radius: 8px;
+        font-size: clamp(8px, 5vw, 1rem);
+        font-weight: 600;
+        color: white;
+        background-color: #444;
+        box-shadow: -3px 4px 0 #222, -5px 7px 0 #000;
+        cursor: pointer;
+
+        &:active{
+            box-shadow: inset -4px 4px 0 #222;
+            font-size: 0.9rem;
+        }
+
+        
+        
+    }
+
 }
 
-img {
-    margin-top: 2rem;
-    width: 300px;
-    height: 300px;
-}
 
-ul {
-    margin-top: 1rem;
-}
 
-.pokeError{
-    margin-bottom: 1rem;
-}
-
-.pokeWrapper{
-    width: 30vw;
-    display: flex;
-    justify-content: space-around;
-}
 
 
